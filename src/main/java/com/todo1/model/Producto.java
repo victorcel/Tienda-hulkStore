@@ -2,34 +2,56 @@ package com.todo1.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Producto {
 
 	@Id
-	private int idProducto;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	
+	@NotEmpty(message = "El articulo del producto es obligatorio")
 	@Column(name = "articulo", length = 50)
 	private String articulo;
+	
+	@NotEmpty(message = "El referencia del producto es obligatorio")
 	@Column(name = "referencia", length = 50)
 	private String referencia;
+	
+	@NotEmpty(message = "El localizacion del producto es obligatorio")
 	@Column(name = "localizacion", length = 50)
 	private String localizacion;
+	
+	@NotEmpty(message = "El proveedor del producto es obligatorio")
 	@Column(name = "proveedor", length = 50)
 	private String proveedor;
+	
+	
+	//@NotEmpty(message = "El min del producto es obligatorio")
+	@Min(value = 1,message = "Las unidades debe de ser mayor o igual 1")
 	@Column(name = "unidad", length = 50)
 	private int unidad;
+
 	@Column(name = "min", length = 50)
 	private int min;
+	
+
 	@Column(name = "max", length = 50)
 	private int max;
 
-	public int getIdProducto() {
-		return idProducto;
+	public int getId() {
+		return id;
 	}
 
-	public void setIdProducto(int idProducto) {
-		this.idProducto = idProducto;
+	public void setId(int id) {
+		this.id= id;
 	}
 
 	public String getArticulo() {

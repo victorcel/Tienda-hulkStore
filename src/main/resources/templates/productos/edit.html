@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Agregar Producto</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+
+<body>
+	<div class="container my-5">
+		<h3>Agregar Producto</h3>
+		<div class="card">
+			<div class="card-body">
+				<div class="col-md-10">
+					<form action="#" th:action="@{/productos}" th:object="${producto}"
+						method="post">
+						<div class="row">
+							<div class="form-group col-md-8">
+								<label for="name" class="col-form-label">Articulo</label> <input
+									type="text" th:field="*{articulo}" class="form-control"
+									id="articulo" placeholder="Articulo" /> <small
+									class="form-text text-danger"
+									th:if="${#fields.hasErrors('articulo')}"
+									th:errors="*{articulo}"></small>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="name" class="col-form-label">Referencia</label> <input
+									type="text" th:field="*{referencia}" class="form-control"
+									id="referencia" placeholder="Referencia" /> <small
+									class="form-text text-danger"
+									th:if="${#fields.hasErrors('referencia')}"
+									th:errors="*{referencia}"></small>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="email" class="col-form-label">Localizacion</label> <input
+									type="text" th:field="*{localizacion}" class="form-control"
+									id="localizacion" placeholder="Localizacion" /> <small
+									class="form-text text-danger"
+									th:if="${#fields.hasErrors('localizacion')}"
+									th:errors="*{localizacion}"></small>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="email" class="col-form-label">Proveedor</label> <input
+									type="text" th:field="*{proveedor}" class="form-control"
+									id="proveedor" placeholder="Proveedor" /> <small
+									class="form-text text-danger"
+									th:if="${#fields.hasErrors('proveedor')}"
+									th:errors="*{proveedor}"></small>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="email" class="col-form-label">Unidades</label> <input
+									type="text" th:field="*{unidad}" class="form-control"
+									id="unidad" placeholder="Unidades" /> <small
+									class="form-text text-danger"
+									th:if="${#fields.hasErrors('unidad')}" th:errors="*{unidad}"></small>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="email" class="col-form-label">Min</label> <input
+									type="text" th:field="*{min}" class="form-control" id="min"
+									placeholder="Min" /><small class="form-text text-danger"
+									th:if="${#fields.hasErrors('min')}" th:errors="*{min}"></small>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="email" class="col-form-label">Max</label> <input
+									type="text" th:field="*{max}" class="form-control" id="max"
+									placeholder="Max" /><small class="form-text text-danger"
+									th:if="${#fields.hasErrors('max')}" th:errors="*{max}"></small>
+							</div>
+							<div class="col-md-6">
+								<input type="submit" class="btn btn-primary" value=" Submit ">
+							</div>
+
+							<input type="hidden" id="id" th:field="*{id}">
+
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
