@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +23,8 @@ public class ProductoController {
 
 	@Autowired
 	ProductoService service;
+	
+	
 
 	@GetMapping
 	public String index(Model model) {
@@ -42,14 +43,14 @@ public class ProductoController {
 		} else {
 			model.addAttribute("producto", new Producto());
 		}
-		return "productos/edit";
+		return "productos/form";
 	}
 
 	@PostMapping
 	public String save(@Valid Producto producto, BindingResult result) throws RecordNotFoundException {
 
 		if (result.hasErrors()) {
-			return "productos/edit";
+			return "productos/form";
 		}
 		service.createOrUpdateProducto(producto);
 		return "redirect:/productos";

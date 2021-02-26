@@ -34,7 +34,7 @@ public class ProductoService {
         if(producto.isPresent()) {
             return producto.get();
         } else {
-            throw new RecordNotFoundException("No existe ID producto");
+        	return new Producto();
         }
     }
     

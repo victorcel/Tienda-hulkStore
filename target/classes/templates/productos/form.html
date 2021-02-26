@@ -22,7 +22,7 @@
 						method="post">
 						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="name" class="col-form-label">Articulo</label> <input
+								<label for="articulo" class="col-form-label">Articulo</label> <input
 									type="text" th:field="*{articulo}" class="form-control"
 									id="articulo" placeholder="Articulo" /> <small
 									class="form-text text-danger"
@@ -30,7 +30,7 @@
 									th:errors="*{articulo}"></small>
 							</div>
 							<div class="form-group col-md-8">
-								<label for="name" class="col-form-label">Referencia</label> <input
+								<label for="referencia" class="col-form-label">Referencia</label> <input
 									type="text" th:field="*{referencia}" class="form-control"
 									id="referencia" placeholder="Referencia" /> <small
 									class="form-text text-danger"
@@ -38,7 +38,7 @@
 									th:errors="*{referencia}"></small>
 							</div>
 							<div class="form-group col-md-8">
-								<label for="email" class="col-form-label">Localizacion</label> <input
+								<label for="localizacion" class="col-form-label">Localizacion</label> <input
 									type="text" th:field="*{localizacion}" class="form-control"
 									id="localizacion" placeholder="Localizacion" /> <small
 									class="form-text text-danger"
@@ -46,7 +46,7 @@
 									th:errors="*{localizacion}"></small>
 							</div>
 							<div class="form-group col-md-8">
-								<label for="email" class="col-form-label">Proveedor</label> <input
+								<label for="proveedor" class="col-form-label">Proveedor</label> <input
 									type="text" th:field="*{proveedor}" class="form-control"
 									id="proveedor" placeholder="Proveedor" /> <small
 									class="form-text text-danger"
@@ -54,26 +54,26 @@
 									th:errors="*{proveedor}"></small>
 							</div>
 							<div class="form-group col-md-8">
-								<label for="email" class="col-form-label">Unidades</label> <input
+								<label for="unidad" class="col-form-label">Unidad</label> <input
 									type="text" th:field="*{unidad}" class="form-control"
 									id="unidad" placeholder="Unidades" /> <small
 									class="form-text text-danger"
 									th:if="${#fields.hasErrors('unidad')}" th:errors="*{unidad}"></small>
 							</div>
 							<div class="form-group col-md-8">
-								<label for="email" class="col-form-label">Min</label> <input
+								<label for="min" class="col-form-label">Min</label> <input
 									type="text" th:field="*{min}" class="form-control" id="min"
 									placeholder="Min" /><small class="form-text text-danger"
 									th:if="${#fields.hasErrors('min')}" th:errors="*{min}"></small>
 							</div>
 							<div class="form-group col-md-8">
-								<label for="email" class="col-form-label">Max</label> <input
+								<label for="max" class="col-form-label">Max</label> <input
 									type="text" th:field="*{max}" class="form-control" id="max"
 									placeholder="Max" /><small class="form-text text-danger"
 									th:if="${#fields.hasErrors('max')}" th:errors="*{max}"></small>
 							</div>
 							<div class="col-md-6">
-								<input type="submit" class="btn btn-primary" value=" Submit ">
+								<input type="submit" class="btn btn-primary" value="Enviar">
 							</div>
 
 							<input type="hidden" id="id" th:field="*{id}">

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Agregar Producto</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+
+<body>
+	<div class="container my-5">
+		<h3>Agregar Detalle Producto</h3>
+		<div class="card">
+			<div class="card-body">
+				<div class="col-md-10">
+					<form action="#" th:action="@{/detalleProductos}"
+						th:object="${detalleProducto}" method="post">
+						<div class="row">
+							<div class="form-group col-md-8">
+								<label for="fecha" class="col-form-label">Fecha</label> <input
+									type="date" th:field="*{fecha}" class="form-control" id="fecha"
+									placeholder="Fecha" /> <small class="form-text text-danger"
+									th:if="${#fields.hasErrors('fecha')}" th:errors="*{fecha}"></small>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="descripcion" class="col-form-label">Descripcion</label>
+								<input type="text" th:field="*{descripcion}"
+									class="form-control" id="descripcion" placeholder="Descripcion" />
+								<small class="form-text text-danger"
+									th:if="${#fields.hasErrors('descripcion')}"
+									th:errors="*{descripcion}"></small>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="factura" class="col-form-label">N. Factura</label> <input
+									type="text" th:field="*{factura}" class="form-control"
+									id="factura" placeholder="N. Factura" /> <small
+									class="form-text text-danger"
+									th:if="${#fields.hasErrors('factura')}" th:errors="*{factura}"></small>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="movimiento" class="col-form-label">Movimiento</label>
+								<select name="movimiento">
+									<option value="0" selected="selected">Seleccionar...</option>
+									<option value="1">Inventario</option>
+									<option value="2">Compra</option>
+									<option value="3">Venta</option>
+									<option value="4">Devolución Compra</option>
+									<option value="5">Devolución Venta</option>
+								</select> <small class="form-text text-danger"
+									th:if="${#fields.hasErrors('movimiento')}"
+									th:errors="*{movimiento}"></small>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="saldo_cantidad" class="col-form-label">Cantidad</label>
+								<input type="text" th:field="*{saldo_cantidad}"
+									class="form-control" id="saldo_cantidad" placeholder="Cantidad" />
+								<small class="form-text text-danger"
+									th:if="${#fields.hasErrors('saldo_cantidad')}"
+									th:errors="*{saldo_cantidad}"></small>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="saldo_valor" class="col-form-label">Valor</label> <input
+									type="text" th:field="*{saldo_valor}" class="form-control"
+									id="saldo_valor" placeholder="Valor" /> <small
+									class="form-text text-danger"
+									th:if="${#fields.hasErrors('saldo_valor')}"
+									th:errors="*{saldo_valor}"></small>
+							</div>
+							<div class="col-md-6">
+								<input type="submit" class="btn btn-primary" value="Enviar">
+							</div>
+
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

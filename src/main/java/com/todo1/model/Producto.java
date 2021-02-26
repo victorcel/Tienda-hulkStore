@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
@@ -19,23 +18,23 @@ public class Producto {
 	@Column(name = "articulo", length = 50)
 	private String articulo;
 	
-	@NotEmpty(message = "El referencia del producto es obligatorio")
+	@NotEmpty(message = "La referencia del producto es obligatorio")
 	@Column(name = "referencia", length = 50)
 	private String referencia;
 	
-	@NotEmpty(message = "El localizacion del producto es obligatorio")
+	@NotEmpty(message = "La localizacion del producto es obligatorio")
 	@Column(name = "localizacion", length = 50)
 	private String localizacion;
 	
-	@NotEmpty(message = "El proveedor del producto es obligatorio")
+	@NotEmpty(message = "La proveedor del producto es obligatorio")
 	@Column(name = "proveedor", length = 50)
 	private String proveedor;
 	
 	
 	//@NotEmpty(message = "El min del producto es obligatorio")
-	@Min(value = 1,message = "Las unidades debe de ser mayor o igual 1")
+	@NotEmpty(message = "La unidad del producto es obligatorio")
 	@Column(name = "unidad", length = 50)
-	private int unidad;
+	private String unidad;
 
 	@Column(name = "min", length = 50)
 	private int min;
@@ -84,11 +83,11 @@ public class Producto {
 		this.proveedor = proveedor;
 	}
 
-	public int getUnidad() {
+	public String getUnidad() {
 		return unidad;
 	}
 
-	public void setUnidad(int unidad) {
+	public void setUnidad(String unidad) {
 		this.unidad = unidad;
 	}
 

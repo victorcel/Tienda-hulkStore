@@ -19,7 +19,7 @@
 				<div th:switch="${productos}" class="container my-5">
 					<p class="my-5">
 						<a href="productos/save" class="btn btn-primary"> <i
-							class="fas fa-user-plus ml-2"> Agregar Producto </i></a>
+							class="fas fa-product-hunt ml-2"> Agregar Producto </i></a>
 					</p>
 					<div class="col-md-12">
 						<h2 th:case="null">Ningún producto creado !!</h2>
@@ -32,11 +32,12 @@
 										<th>Referencia</th>
 										<th>Localizacion</th>
 										<th>Proveedor</th>
-										<th>Unidades</th>
+										<th>Unidad</th>
 										<th>Min</th>
 										<th>Max</th>
-										<th>Edit</th>
-										<th>Delete</th>
+										<th>Editar</th>
+										<th>Eliminar</th>
+										<th>Detalle</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -57,6 +58,11 @@
 											th:href="@{productos/delete/{id}(id=${producto.id})}"
 											class="btn btn-primary"> <i
 												class="fas fa-user-times ml-2"></i>
+										</a></td>
+																				<td><a
+											th:href="@{/detalleProductos/{id}(id=${producto.id})}"
+											class="btn btn-primary"> <i
+												class="fas fa-eye ml-2"></i>
 										</a></td>
 									</tr>
 								</tbody>
