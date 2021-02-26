@@ -73,17 +73,12 @@ public class DetalleProductoControlller {
 			int entrada_cant = detalleProducto.getSaldo_cantidad();
 			int entrada_valor = detalleProducto.getSaldo_valor();
 			int vlr_unitario = entrada_valor / entrada_cant;
-			
-		
+
 			detalleProducto.setVlr_unitario(vlr_unitario);
 			detalleProducto.setEn_cantidad(entrada_cant);
 			detalleProducto.setEn_valor(entrada_valor);
 			detalleProducto.setSaldo_cantidad(entrada_cant);
 			detalleProducto.setSaldo_valor(entrada_valor);
-		}else if (detalleProducto.getMovimiento() == 2) {
-			DetalleProducto ultimaFila = service.ultimaFila(producto_id);
-			System.err.println(ultimaFila.getId());
-			
 		}
 		detalleProducto.setProductoId(producto_id);
 		//service.createOrUpdateDetalleProducto(detalleProducto);
